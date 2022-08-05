@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Stack, ThemeProvider } from "@mui/material";
+import React, { useState } from "react";
+import Form from "./components/Form";
+import Heading from "./components/Heading";
+import customTheme from "./theme";
+import { MuiTelInput } from "mui-tel-input";
+import Results from "./components/Results";
+import "./app.css";
 
-function App() {
+const App: React.FC = () => {
+  const [result, setResult] = useState<string | null>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={customTheme}>
+      <Container
+        maxWidth="md"
+        style={{
+          paddingTop: "36px",
+          paddingBottom: "28px",
+        }}
+      >
+        <Stack spacing={5}>
+          <Heading />
+          <Form setResult={setResult} result={result} />
+          {result === null ? <></> : <Results link={result!} />}
+        </Stack>
+      </Container>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
