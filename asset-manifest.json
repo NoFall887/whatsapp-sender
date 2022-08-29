@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/whatsapp-sender/static/css/main.45a73664.css",
-    "main.js": "/whatsapp-sender/static/js/main.ef5f0832.js",
+    "main.js": "/whatsapp-sender/static/js/main.782e2732.js",
     "static/media/roboto-all-500-normal.woff": "/whatsapp-sender/static/media/roboto-all-500-normal.0ab669b7a0d19b178f57.woff",
     "static/media/roboto-all-700-normal.woff": "/whatsapp-sender/static/media/roboto-all-700-normal.a457fde362a540fcadff.woff",
     "static/media/roboto-all-400-normal.woff": "/whatsapp-sender/static/media/roboto-all-400-normal.c5d001fa922fa66a147f.woff",
@@ -37,10 +37,10 @@
     "static/media/roboto-greek-ext-700-normal.woff2": "/whatsapp-sender/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
     "index.html": "/whatsapp-sender/index.html",
     "main.45a73664.css.map": "/whatsapp-sender/static/css/main.45a73664.css.map",
-    "main.ef5f0832.js.map": "/whatsapp-sender/static/js/main.ef5f0832.js.map"
+    "main.782e2732.js.map": "/whatsapp-sender/static/js/main.782e2732.js.map"
   },
   "entrypoints": [
     "static/css/main.45a73664.css",
-    "static/js/main.ef5f0832.js"
+    "static/js/main.782e2732.js"
   ]
 }
