@@ -2,6 +2,8 @@ import { ButtonProps, Paper, Stack, styled, TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { MuiTelInput } from "mui-tel-input";
 import React, { useEffect, useState } from "react";
+import { IEmojiData } from "emoji-picker-react";
+import EmojiPickerCustom from "./EmojiPickerCustom";
 
 const SubmitButton = styled(LoadingButton)<ButtonProps>(({ theme }) => ({
   fontSize: 20,
@@ -19,6 +21,10 @@ const Form: React.FC<setResultState> = ({ setResult, result }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const onEmojiClick = (event: React.MouseEvent, emojiObject: IEmojiData) => {
+    setMessage((prev) => prev + emojiObject.emoji);
+  };
+
   useEffect(() => {
     window.scrollTo(0, document.body.scrollHeight);
   }, [result]);
@@ -31,7 +37,6 @@ const Form: React.FC<setResultState> = ({ setResult, result }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
-    console.log(phone);
 
     // start formatting
     let url = "https://wa.me/";
@@ -69,13 +74,15 @@ const Form: React.FC<setResultState> = ({ setResult, result }) => {
             id="message"
             variant="outlined"
             label="Pesan WhatsApp:"
-            required
             multiline
             fullWidth
             minRows={7}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
+
+          <EmojiPickerCustom onEmojiClick={onEmojiClick} />
+
           <SubmitButton loading={isLoading} variant="contained" type="submit">
             Buat Link
           </SubmitButton>
